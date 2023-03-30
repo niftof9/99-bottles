@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>99 Bottles of Beer</title>
+<title>Subject Marks</title>
 <script>
 window.onload = function() {
-let bottles = 99;
-let lyrics = '';
+let numSubjects = parseInt(prompt("How many subjects did you take?"));
+let totalMarks = 0;
+let i = 1;
+let marks;
 
-while (bottles > 0) {
-lyrics += `${bottles} bottles of beer on the wall, ${bottles} bottles of beer.<br>`;
-lyrics += `Take one down, pass it around, ${bottles - 1} bottle${bottles === 2 ? '' : 's'} of beer on the wall!<br><br>`;
-bottles--;
+while (i <= numSubjects) {
+marks = parseInt(prompt(`Enter marks for subject ${i}:`));
+totalMarks += marks;
+i++;
 }
 
-lyrics += `No more bottles of beer on the wall!<br>`;
-document.getElementById("lyrics").innerHTML = lyrics;
+let averageMarks = totalMarks / numSubjects;
+
+document.getElementById("results").innerHTML = `You took ${numSubjects} subjects and your average marks is ${averageMarks.toFixed(2)}.`;
 }
 </script>
 </head>
 <body>
-<h1>99 Bottles of Beer</h1>
-<div id="lyrics"></div>
+<h1>Subject Marks</h1>
+<div id="results"></div>
 </body>
-</html>
+</html>2
