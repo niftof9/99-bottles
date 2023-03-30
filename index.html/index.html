@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>99 Bottles of Beer</title>
+<script>
+window.onload = function() {
+let bottles = 99;
+let lyrics = '';
+
+while (bottles > 0) {
+lyrics += `${bottles} bottles of beer on the wall, ${bottles} bottles of beer.<br>`;
+lyrics += `Take one down, pass it around, ${bottles - 1} bottle${bottles === 2 ? '' : 's'} of beer on the wall!<br><br>`;
+bottles--;
+}
+
+lyrics += `No more bottles of beer on the wall!<br>`;
+document.getElementById("lyrics").innerHTML = lyrics;
+}
+</script>
+</head>
+<body>
+<h1>99 Bottles of Beer</h1>
+<div id="lyrics"></div>
+</body>
+</html>
